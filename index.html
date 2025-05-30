@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    @media (min-width: 600px) {
+      select, button {
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Find Your Table</h1>
+    <label for="name">Select Your Name:</label>
+    <select id="name">
+      <option value="">--Choose--</option>
+      <option value="Table 1">Jyoti & Harish Nayak</option>
+      <option value="Table 2">Leena & Prakash Kamath</option>
+      <option value="Table 3">Mikail Kamath</option>
+      <option value="Table 4">Pratt Kamath</option>
+      <option value="Table 5">Shravan</option>
+      <option value="Table 6">Divya Pandya & Plus 1</option>
+      <option value="Table 7">Faria & Nadeem </option>
+      <option value="Table 8">Kathleen & Plus 1</option>
+      <option value="Table 9">Kat & Plus 1</option>
+      <option value="Table 10">Sharmila & Sujja</option>
+      <option value="Table 3">Bryan & Shalini Persad & Plus 2</option>
+      <option value="Table 6">Ashly</option>
+      <option value="Table 6">Paola</option>
+      <option value="Table 7">Vinaya & Shayam</option>
+      <option value="Table 3">Harsha & Niket Rele</option>
+      <option value="Table 8">Doug & Tania & Plus 5</option>
+      <option value="Table 8">Jake & Hannah</option>
+      <option value="Table 9">Cindy & Dick</option>
+      <option value="Table 10">Drew & Kara & Plus 2</option>
+      <option value="Table 10">Brian & Heidi & Plus 3</option>
+      <option value="Table 6">Ferg & Mel </option>
+      <option value="Table 8">Cat</option>
+      <option value="Table 9">Robby & Tatiana </option>
+      <option value="Table 9">Anthony</option>
+      <option value="Table 9">Joey Avancho & Plus 1</option>
+    </select>
+    <button onclick="showTable()">Submit</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function showTable() {
+      const name = document.getElementById("name").value;
+      const result = document.getElementById("result");
+      result.textContent = name ? `Your table is: ${name}` : "Please select a name.";
+    }
+  </script>
+</body>
+</html>
