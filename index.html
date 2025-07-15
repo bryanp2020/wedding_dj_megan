@@ -3,20 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table Assignment</title>
+  <title>Richard & Megan Wedding – Find Your Table</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f6f6f6;
+    }
+
+    h1 {
       text-align: center;
-      margin: 50px 20px;
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
-    .container {
-      max-width: 400px;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      max-width: 1000px;
       margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    select, button {
+    .content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .left img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .right select,
+    .right button {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
@@ -26,61 +58,88 @@
     #result {
       margin-top: 20px;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 1.2rem;
+      color: #444;
     }
 
-    @media (min-width: 600px) {
-      select, button {
-        max-width: 300px;
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Find Your Table</h1>
-    <label for="name">Select Your Name:</label>
-    <select id="name">
-      <option value="">--Choose--</option>
-      <option value="Table 1">Jyoti & Harish Nayak</option>
-      <option value="Table 2">Leena & Prakash Kamath</option>
-      <option value="Table 3">Mikail Kamath</option>
-      <option value="Table 4">Pratt Kamath</option>
-      <option value="Table 5">Shravan</option>
-      <option value="Table 6">Divya Pandya & Plus 1</option>
-      <option value="Table 7">Faria & Nadeem </option>
-      <option value="Table 8">Kathleen & Plus 1</option>
-      <option value="Table 9">Kat & Plus 1</option>
-      <option value="Table 10">Sharmila & Sujja</option>
-      <option value="Table 3">Bryan & Shalini Persad & Plus 2</option>
-      <option value="Table 6">Ashly</option>
-      <option value="Table 6">Paola</option>
-      <option value="Table 7">Vinaya & Shayam</option>
-      <option value="Table 3">Harsha & Niket Rele</option>
-      <option value="Table 8">Doug & Tania & Plus 5</option>
-      <option value="Table 8">Jake & Hannah</option>
-      <option value="Table 9">Cindy & Dick</option>
-      <option value="Table 10">Drew & Kara & Plus 2</option>
-      <option value="Table 10">Brian & Heidi & Plus 3</option>
-      <option value="Table 6">Ferg & Mel </option>
-      <option value="Table 8">Cat</option>
-      <option value="Table 9">Robby & Tatiana </option>
-      <option value="Table 9">Anthony</option>
-      <option value="Table 9">Joey Avancho & Plus 1</option>
-      <option value="Table 9">Sanjeet & Abhilasha & Sushila</option>
-      <option value="Table 9">Chitra & Mohan </option>
-      <option value="Table 9">Corey & Sabrina</option>
-      <option value="Table 9">Eric & Aimee</option>
-      <option value="Table 9">Robby & Kara</option>
-      <option value="Table 9">Chris & Mandy</option>
-      <option value="Table 9">Albania</option>
-      <option value="Table 9">Amit & Soumya & plus 1</option>
-      <option value="Table 9">Ben & Nicole </option>
-      <option value="Table 9">DJ</option>
-      <option value="Table 9">Sameet & plus 2</option>
-    </select>
-    <button onclick="showTable()">Submit</button>
-    <p id="result"></p>
+  <h1>Richard & Megan Wedding</h1>
+
+  <div class="wrapper">
+    <div class="content">
+      <div class="left">
+        <img src="https://github.com/bryanp2020/wedding_dj_megan/blob/main/images/megan-richard.jpg" alt="Richard &amp; Megan Wedding" />
+      </div>
+      <div class="right">
+        <h2 style="text-align:center;">Find Your Table</h2>
+        <label for="name">Select Your Name:</label>
+        <select id="name">
+          <option value="">--Choose--</option>
+          <option value="Wedding Table">Jyoti & Harish Nayak</option>
+          <option value="Wedding Table">Cindy & Dick</option>
+          <option value="Table 1">Leena Kamath</option>
+          <option value="Table 1">Prakash Kamath</option>
+          <option value="Table 1">Mikail Kamath</option>
+          <option value="Table 1">Pratt Kamath</option>
+          <option value="Table 1">Shravan</option>
+          <option value="Table 1">Sharmila</option>
+          <option value="Table 1">Sujja</option>
+          <option value="Table 1">Albania</option>
+          <option value="Table 4">Divya Pandya & Michael</option>
+          <option value="Table 4">Faria & Nadiem </option>
+          <option value="Table 4">Kathleen</option>
+          <option value="Table 4">Jon</option>
+          <option value="Table 4">Kat</option>
+          <option value="Table 4">Tyler</option>
+          <option value="Table 3">Bryan & Shalini & Devi</option>
+          <option value="Table 4">Ashly</option>
+          <option value="Table 4">Paola</option>
+          <option value="Table 2">Vinaya & Shyam</option>
+          <option value="Table 5">Harsha & Niket</option>
+          <option value="Table 2">Sanjeet & Abhilasha & Sushila</option>
+          <option value="Table 5">Chitra & Mohan </option>
+          <option value="Table 6">Doug & Tania </option>
+          <option value="Table 6">Jake & Hannah</option>
+          <option value="Table 6">Drew & Kara </option>
+          <option value="Table 6">Brian & Heidi </option>
+          <option value="Table 7">David</option>
+          <option value="Table 7">Daniel</option>
+          <option value="Table 7">Brady</option>
+          <option value="Table 7">Abbey</option>
+          <option value="Table 7">Kate</option>
+          <option value="Table 7">Ben</option>
+          <option value="Table 7">Leslie</option>
+          <option value="Table 7">Isaac</option>
+          <option value="Table 7">Isiah</option>
+          <option value="Table 10">Corey & Sabrina </option>
+          <option value="Table 8">Ferg & Mel </option>
+          <option value="Table 8">Cat</option>
+          <option value="Table 8">Joey Avancho & Plus 1</option>
+          <option value="Table 9">Jeff & Tatiana</option>
+          <option value="Table 10">Eric & Aimee</option>
+          <option value="Table 8">Robby & Kara</option>
+          <option value="Table 8">Chris & Mandy</option>
+          <option value="Table 9">Robby & Tatiana </option>
+          <option value="Table 5">Amit & Soumya & plus 1</option>
+          <option value="Table 10">Ben & Nicole </option>
+          <option value="Table 10">Anthony</option>
+          <option value="Table 2">Sameet & plus 2</option>
+        </select>
+        <button onclick="showTable()">Submit</button>
+        <p id="result"></p>
+      </div>
+    </div>
   </div>
 
   <script>
